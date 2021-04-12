@@ -3,6 +3,7 @@
 Welcome to the Modulr coding exercise!
 
 ## Introduction
+
 We have created an exercise designed to let you show off your skill and creativity when it comes to API design and implementation.
 
 Consider an email client like Gmail or Outlook and imagine you are writing a backend service to handle the requests coming from the UI.
@@ -27,3 +28,7 @@ You are in complete control of how those endpoints are structured however you sh
 ## Assessment
 
 Your submission will be used in the next part of the interview process to discuss your approach and implementation.
+
+## Forking / hosting your solution on a public repo
+
+Please take sensible steps to avoid other candidates being able to view your submission.
