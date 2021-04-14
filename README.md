@@ -29,6 +29,6 @@ You are in complete control of how those endpoints are structured however you sh
 
 Your submission will be used in the next part of the interview process to discuss your approach and implementation.
 
-## Forking / hosting your solution on a public repo
+## Try to avoid forking or hosting your solution on a public repo
 
 Please take sensible steps to avoid other candidates being able to view your submission.
