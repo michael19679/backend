@@ -1,5 +1,7 @@
-package io.email.test.controller;
+package io.email.test.controller.unit;
 
+import io.email.test.controller.ReadSingleEmailController;
+import io.email.test.controller.SendEmailController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -11,35 +13,35 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith({MockitoExtension.class})
-public class DeleteEmailControllerUnitTests {
+public class ReadSingleEmailControllerUnitTests {
 
     @InjectMocks
-    private DeleteEmailController testee;
+    private ReadSingleEmailController testee;
 
     @Test
-    public void shouldFindSubjectAndDeleteEmailSuccessfully() {
+    public void shouldReadSingleEmailWithDefinedSubject() {
         //Given
-        String subjectToDelete = "xxx";
+        String subjectToFind = "Test";
         String userName = "xxx@gmail.com";
         String password = "xxx";
         String pop3Host = "pop.gmail.com";
 
         //When
-        ResponseEntity<String> result = testee.deleteMail(subjectToDelete, userName, password, pop3Host);
+        ResponseEntity<String> result = testee.readSingleEmail(subjectToFind, userName, password, pop3Host);
 
         //Then
         assertEquals(result.getStatusCode(), HttpStatus.OK);
     }
 
     @Test
-    public void shouldThrowExceptionDueToInvalidHost() {
+    public void shouldThrowExceptionDueToMissingPassword() {
         //Given
-        String subjectToDelete = "xxx";
+        String subjectToFind = "xxx@gmail.com";
         String userName = "xxx@gmail.com";
-        String password = "xxx";
+        String password = "";
         String pop3Host = "pop.gmail.com";
 
         //When / Then
-        assertThrows(RuntimeException.class, () -> testee.deleteMail(subjectToDelete, userName, password, pop3Host));
+        assertThrows(RuntimeException.class, () -> testee.readSingleEmail(subjectToFind, userName, password, pop3Host));
     }
 }

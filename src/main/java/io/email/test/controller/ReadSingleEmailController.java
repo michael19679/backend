@@ -56,7 +56,7 @@ public class ReadSingleEmailController {
             store.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return ResponseEntity.ok("Email Read");
     }
