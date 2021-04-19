@@ -1,0 +1,28 @@
+spring:
+  mail:
+    username: xxx@gmail.com
+    password: xxx
+    host: smtp.gmail.com
+    port: 587
+    ###for delete
+    pop3:
+      host: pop.gmail.com
+      port: 993
+      username: xxx@gmail.com
+      password: xxx
+    ###
+    properties:
+      mail:
+        debug: true
+        smtp:
+          starttls:
+            enable: true
+
+email-service:
+  from: xxx@gmail.com
+  to: xxx@gmail.com
+  subject: Test
+  body: Test
+
+subjectToDelete: Security alert
+subjectToFind: Dummy Message
